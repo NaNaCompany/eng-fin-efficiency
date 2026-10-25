@@ -1,0 +1,80 @@
+export const tool={
+  "id": "E152",
+  "slug": "eng-fin-efficiency",
+  "title": "방열핀 효율 계산기",
+  "title_en": "Insulated-tip fin efficiency calculator",
+  "category": "열·열역학",
+  "category_en": "Heat and thermodynamics",
+  "fields": [
+    {
+      "key": "length",
+      "label": "핀 길이 L",
+      "label_en": "Fin length L",
+      "dimension": "length",
+      "example": 0.1,
+      "constraint": "nonnegative",
+      "display_unit": "m",
+      "display_value": "0.10000000000000001"
+    },
+    {
+      "key": "area",
+      "label": "핀 전도 단면적 A꜀",
+      "label_en": "Fin conduction cross-sectional area A꜀",
+      "dimension": "area",
+      "example": 0.0001,
+      "constraint": "positive",
+      "display_unit": "mm2",
+      "display_value": "100.00000000000001"
+    },
+    {
+      "key": "perimeter",
+      "label": "대류에 노출된 단면 둘레 P",
+      "label_en": "Cross-section perimeter exposed to convection P",
+      "dimension": "length",
+      "example": 0.04,
+      "constraint": "positive",
+      "display_unit": "mm",
+      "display_value": "40"
+    },
+    {
+      "key": "k",
+      "label": "핀 열전도율 k",
+      "label_en": "Fin thermal conductivity k",
+      "dimension": "conductivity",
+      "example": 200,
+      "constraint": "positive",
+      "display_unit": "WmK",
+      "display_value": "200"
+    },
+    {
+      "key": "h",
+      "label": "표면 대류 열전달계수 h",
+      "label_en": "Surface convection coefficient h",
+      "dimension": "convection",
+      "example": 50,
+      "constraint": "nonnegative",
+      "display_unit": "Wm2K",
+      "display_value": "50"
+    }
+  ],
+  "result_label": "끝단 단열 핀 효율 η",
+  "result_label_en": "Insulated-tip fin efficiency η",
+  "result_dimension": "fraction",
+  "output_unit": "percent",
+  "formula": "m = √(hP/(kA꜀)); η = tanh(mL)/(mL); mL → 0: η → 1",
+  "purpose": "일정한 단면을 가진 곧은 핀의 실제 열방출량을 핀 전체가 기저 온도일 때의 이상적인 열방출량과 비교합니다.",
+  "purpose_en": "Compare heat transfer from a straight uniform fin with the ideal heat transfer if its entire surface were at the base temperature.",
+  "assumptions": "정상 1차원 전도, 일정한 단면·열전도율·대류계수·주위 온도, 균일한 기저 온도, 끝단 단열을 가정합니다. 횡단면 온도차·복사·접촉 열저항은 제외합니다. P는 측면 대류 면적을 만드는 둘레이며 끝단 면적은 포함하지 않습니다. h=0 또는 L=0이면 효율의 극한값 1을 표시하며 열방출량이 있다는 뜻은 아닙니다.",
+  "assumptions_en": "Required: steady one-dimensional conduction, uniform cross-section, constant conductivity, convection coefficient and ambient temperature, uniform base temperature and an insulated tip. Excluded: transverse temperature gradients, radiation and contact resistance. P creates the lateral convection area; the tip area is excluded. At h=0 or L=0 the displayed efficiency is its limiting value 1, which does not imply nonzero heat transfer.",
+  "sources": [
+    {
+      "label": "IIT Bombay Virtual Labs, heat transfer through pin fin",
+      "url": "https://htc2-iitb.vlabs.ac.in/exp/heat-transfer-pin-fin/pretest.html"
+    }
+  ],
+  "condition": "횡단면 온도가 균일한 1차원 핀과 끝단 단열 가정을 확인했습니다.",
+  "condition_en": "I confirm the one-dimensional fin approximation with uniform cross-section temperature and an insulated tip.",
+  "site": "https://nanalab.kr/eng-fin-efficiency/",
+  "repository": "https://github.com/NaNaCompany/eng-fin-efficiency",
+  "groups": []
+};

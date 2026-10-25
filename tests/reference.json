@@ -1,0 +1,47 @@
+{
+  "id": "E152",
+  "value": 0.7615941559557649,
+  "method": "Independent Python Decimal at 1000 decimal digits; eta=tanh(mL)/(mL), tanh from high precision exponentials.",
+  "cases": [
+    {
+      "name": "mL one",
+      "values": {},
+      "expected": 0.7615941559557649
+    },
+    {
+      "name": "zero convection limit",
+      "values": {
+        "h": 0
+      },
+      "expected": 1.0
+    },
+    {
+      "name": "zero length limit",
+      "values": {
+        "length": 0
+      },
+      "expected": 1.0
+    },
+    {
+      "name": "short fin",
+      "values": {
+        "length": 1e-08
+      },
+      "expected": 0.9999999999999967
+    },
+    {
+      "name": "long fin",
+      "values": {
+        "length": 10
+      },
+      "expected": 0.01
+    },
+    {
+      "name": "negative h",
+      "values": {
+        "h": -1
+      },
+      "throws": true
+    }
+  ]
+}
